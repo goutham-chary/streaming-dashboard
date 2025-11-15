@@ -42,7 +42,7 @@ export default async function SeriesPage() {
 
             <h2 className="text-2xl mb-4 font-bold">Popular TV Series</h2>
             <div className="flex gap-4 overflow-x-auto">
-                {shows.map((show) => (
+                {shows.map((show: TVShow) => (
                     <div key={show.id} className="min-w-[150px] relative">
                         <Image
                             src={
