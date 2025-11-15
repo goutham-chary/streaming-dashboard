@@ -1,6 +1,8 @@
 import MovieRow from "@/components/MovieRow";
 import Image from "next/image";
 
+
+
 export default async function MoviesPage() {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/tmdb`, {
         cache: "no-store",

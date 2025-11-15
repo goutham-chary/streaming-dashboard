@@ -1,5 +1,13 @@
 import Image from "next/image";
 
+interface TVShow {
+    id: number;
+    name: string;
+    poster_path: string | null;
+    backdrop_path?: string | null;
+}
+
+
 export default async function SeriesPage() {
     const apiKey = process.env.TMDB_API_KEY;
 
@@ -8,7 +16,7 @@ export default async function SeriesPage() {
         { cache: "no-store" }
     );
     const data = await res.json();
-    const shows = data.results;
+    const shows: TVShow[] = data.results;
 
     return (
         <div className="px-4">
