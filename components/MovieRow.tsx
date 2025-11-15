@@ -2,8 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
+interface Movie {
+    id: number;
+    title: string;
+    poster_path: string | null;
+}
 
-export default function MovieRow({ movies, categoryTitle }) {
+interface MovieRowProps {
+    movies: Movie[];
+    categoryTitle: string;
+}
+
+export default function MovieRow({ movies, categoryTitle }: MovieRowProps) {
     return (
         <section className="mb-8 px-4">
             <h2 className="text-2xl font-semibold mb-3">{categoryTitle}</h2>
